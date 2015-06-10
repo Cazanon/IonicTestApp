@@ -1,36 +1,24 @@
-
-
-
-<ion-view view-title={{recipe.name}}>
+<ion-view view-title="ToCook">
     <ion-content>
-    <ion-list>
-        <ion-item class="list card" ng-repeat="recipe in recipes" href="#/app/recipes/{{recipe.id}}">{{recipe.title}}
-
-            
-              <div class="item">
-                <h1>{{recipe.name}}</h1>
-                <h3>{{recipe.time}}</h3>
-                <h2>{{recipe.title}}</h2>
-                <p>{{recipe.speaker}}</p>
-              </div>
-              <div class="item item-body">
-                <p>{{recipe.description}}</p>
-              </div>
-              <div class="item tabs tabs-secondary tabs-icon-left">
-                <a class="tab-item">
-                  <i class="icon ion-thumbsup"></i>
-                  <ion-item href="#/app/recipes">{{recipe.title}}</ion-item>
-                </a>
-                <a class="tab-item">
-                  <i class="icon ion-chatbox"></i>
-                  Comment
-                </a>
-                <a class="tab-item">
-                  <i class="icon ion-share"></i>
-                  Share
-                </a>
-              </div>
-          </ion-item>
+        <ion-list class="list list-inset" ng-repeat="recipe in recipes">
+             <div class="card">
+                <div class="item item-avatar bar bar-calm">
+                    <img class="full-image" ng-src="{{recipe.icon}}"> 
+                    <h1 class="title">{{recipe.name}}</h1>
+                </div>
+                <div class="item item-text-wrap">
+                    <img class="full-image" ng-src="{{recipe.image}}">     
+                    <div class="item">
+                        {{recipe.subname}}
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="#/app/recipes/{{recipe.id}}" class="item item-icon-left blue">
+                        <i class="icon icon-left ion-fork"></i>
+                        Ver receta                                         
+                    </a>           
+                </div>
+            </div>
         </ion-list>
-      </ion-content>
+    </ion-content>
 </ion-view>
